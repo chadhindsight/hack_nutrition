@@ -1,10 +1,11 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import foods from '../data/foods.json'
+
 import './App.css'
+console.log(foods)
 
 function App() {
-
+  // 
   return (
     <>
 
