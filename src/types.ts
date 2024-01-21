@@ -5,4 +5,4 @@ export interface foodData {
     servings: number;
 }
 
-export type FoodDataArray = foodData[];
+export type foodDataType = foodData[];
