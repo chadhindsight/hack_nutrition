@@ -1,18 +1,23 @@
 import { useState } from 'react'
 import foods from '../data/foods.json'
 
+import { foodDataType } from './types';
 import './App.css'
-console.log(foods)
+import FoodBox from './components/FoodBox';
 
 function App() {
   // Put food data in state
-  const [foodState, setFoodState] = useState(foods);
+  const [foodList, setFoodList] = useState<foodDataType>(foods);
 
-  console.log(foodState);
+  console.log(foodList);
 
   return (
     <>
-
+      {
+        foodList.map(foodItem => (
+          <FoodBox {...foodItem} />
+        ))
+      }
     </>
   )
 }
