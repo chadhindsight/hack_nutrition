@@ -5,7 +5,11 @@ import './App.css'
 console.log(foods)
 
 function App() {
-  // 
+  // Put food data in state
+  const [foodState, setFoodState] = useState(foods);
+
+  console.log(foodState);
+
   return (
     <>
 
