@@ -1,10 +1,16 @@
-// import Ant Design components before using them.
+// import Ant Design components before using them
 import { Card, Col, Button } from 'antd';
 import { foodData } from '../types';
+import { useAppContext } from '../context/globalState';
 
-// Iteration 2
 function FoodBox(foodItem: foodData) {
-    const { name, calories, image, servings, deleteFood } = foodItem
+    const { name, calories, image, servings, id } = foodItem
+
+    const { dispatch } = useAppContext();
+
+    const handleDelete = (id: number) => {
+        dispatch({ type: 'DELETE_FOOD', payload: id });
+    };
     return (
         <Col>
             <Card
@@ -17,7 +23,7 @@ function FoodBox(foodItem: foodData) {
                 <p>
                     <b>Total Calories: {calories * servings} </b> kcal
                 </p>
-                <Button type="primary" onClick={deleteFood}> Delete </Button>
+                <Button type="primary" onClick={() => handleDelete(id)}> Delete </Button>
             </Card>
         </Col>
     );
