@@ -14,7 +14,6 @@ function App() {
     setFoodList(prevList => prevList.filter(food => food.id !== id))
   }
 
-  console.log(foodList);
 
   return (
     <>
