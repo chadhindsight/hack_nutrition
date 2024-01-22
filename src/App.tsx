@@ -6,7 +6,7 @@ import './App.css'
 import FoodBox from './components/FoodBox';
 
 function App() {
-  // Put food data in state.
+  // Put food data in state
   const [foodList, setFoodList] = useState<foodDataType>(foods);
 
   // delete an entry
