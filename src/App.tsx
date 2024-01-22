@@ -6,16 +6,20 @@ import './App.css'
 import FoodBox from './components/FoodBox';
 
 function App() {
-  // Put food data in state.
+  // Put food data in state
   const [foodList, setFoodList] = useState<foodDataType>(foods);
 
-  console.log(foodList);
+  // delete an entry
+  const deleteFood = (id: number) => {
+    setFoodList(prevList => prevList.filter(food => food.id !== id))
+  }
+
 
   return (
     <>
       {
         foodList.map(foodItem => (
-          <FoodBox {...foodItem} />
+          <FoodBox {...foodItem} deleteFood={() => deleteFood(foodItem.id)} />
         ))
       }
     </>
