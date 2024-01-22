@@ -4,6 +4,7 @@ export interface foodData {
     image: string;
     servings: number;
     id: number;
+    deleteFood?: () => void;
 }
 
 export type foodDataType = foodData[];
