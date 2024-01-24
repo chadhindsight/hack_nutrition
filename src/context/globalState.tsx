@@ -1,5 +1,5 @@
 import React, { createContext, useContext, ReactNode, useReducer, Dispatch } from 'react';
-import { foodDataArray } from '../types';
+import { foodData, foodDataArray } from '../types';
 import foods from '../../data/foods.json';
 
 interface AppContextProps {
@@ -9,7 +9,8 @@ interface AppContextProps {
 
 type FoodAction =
     | { type: 'SET_FOOD_LIST'; payload: foodDataArray }
-    | { type: 'DELETE_FOOD'; payload: number };
+    | { type: 'DELETE_FOOD'; payload: number }
+    | { type: 'SEARCH_FOOD'; payload: string };
 
 const appReducer = (state: foodDataArray, action: FoodAction): foodDataArray => {
     switch (action.type) {
@@ -17,8 +18,14 @@ const appReducer = (state: foodDataArray, action: FoodAction): foodDataArray => 
             return action.payload;
         case 'DELETE_FOOD':
             return state.filter((food) => food.id !== action.payload);
+        case 'SEARCH_FOOD':
+            return state.filter((food) => {
+                const lowercaseQuery = action.payload.toLowerCase();
+                // handles cases where a user might clear the search field
+                return lowercaseQuery === '' ? foods : food.name.toLowerCase().includes(lowercaseQuery);
+            });
         default:
-            return state;
+            return state
     }
 };
 
@@ -53,3 +60,4 @@ export const AppProvider = ({ children }: AppProviderProps) => {
         </AppContext.Provider>
     );
 };
+// state.filter((food) => food.name.includes(action.payload));   
