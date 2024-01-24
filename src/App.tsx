@@ -1,6 +1,7 @@
 import { useAppContext } from './context/globalState';
 import FoodBox from './components/FoodBox';
 import './App.css'
+import Search from './components/Search';
 
 function App() {
   // get foodList from global state
@@ -9,9 +10,10 @@ function App() {
 
   return (
     <>
+      <Search />
       {
         foodList.map(foodItem => (
-          <FoodBox {...foodItem} />
+          <FoodBox key={foodItem.id} {...foodItem} />
         ))
       }
     </>
