@@ -1,5 +1,5 @@
 import React, { createContext, useContext, ReactNode, useReducer, Dispatch } from 'react';
-import { foodData, foodDataArray } from '../types';
+import { foodDataArray } from '../types';
 import foods from '../../data/foods.json';
 
 interface AppContextProps {
