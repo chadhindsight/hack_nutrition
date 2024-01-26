@@ -19,12 +19,10 @@ const appReducer = (state: foodDataArray, action: FoodAction): foodDataArray => 
         case 'DELETE_FOOD':
             return state.filter((food) => food.id !== action.payload);
         case 'SEARCH_FOOD':
-            // eslint-disable-next-line no-case-declarations
-            const lowercaseQuery = action.payload.toLowerCase();
-            if (lowercaseQuery.trim() === '') {
+            if (action.payload.toLowerCase().trim() === '') {
                 return foods; // If the search query is empty, return the original list
             } else {
-                return foods.filter((food) => food.name.toLowerCase().includes(lowercaseQuery));
+                return foods.filter((food) => food.name.toLowerCase().includes(action.payload.toLowerCase()));
             }
         default:
             return state
