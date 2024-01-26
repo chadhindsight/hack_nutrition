@@ -1,4 +1,4 @@
-import { Divider, Input } from 'antd';
+import { Input } from 'antd';
 import { useAppContext } from '../context/globalState';
 
 function Search() {
@@ -12,7 +12,6 @@ function Search() {
 
     return (
         <>
-            <Divider>Search</Divider>
             <label>Search Food</label>
             <Input placeholder="Searh for food" type='text' onChange={(e) => handleSearch(e)} />
         </>
