@@ -4,7 +4,7 @@ import './App.css'
 import Search from './components/Search';
 
 function App() {
-  // get foodList from global state
+  // get the foodList from global state
   const { foodList } = useAppContext();
 
 
