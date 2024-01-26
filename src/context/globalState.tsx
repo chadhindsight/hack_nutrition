@@ -19,11 +19,13 @@ const appReducer = (state: foodDataArray, action: FoodAction): foodDataArray => 
         case 'DELETE_FOOD':
             return state.filter((food) => food.id !== action.payload);
         case 'SEARCH_FOOD':
-            return state.filter((food) => {
-                const lowercaseQuery = action.payload.toLowerCase();
-                // handles cases where a user might clear the search field
-                return lowercaseQuery === '' ? foods : food.name.toLowerCase().includes(lowercaseQuery);
-            });
+            // eslint-disable-next-line no-case-declarations
+            const lowercaseQuery = action.payload.toLowerCase();
+            if (lowercaseQuery.trim() === '') {
+                return foods; // If the search query is empty, return the original list
+            } else {
+                return foods.filter((food) => food.name.toLowerCase().includes(lowercaseQuery));
+            }
         default:
             return state
     }
@@ -32,7 +34,7 @@ const appReducer = (state: foodDataArray, action: FoodAction): foodDataArray => 
 
 const defaultContextValue: AppContextProps = {
     foodList: foods,
-    dispatch: () => { }, // Provide a dummy dispatch function or handle it based on your needs
+    dispatch: () => { },
 };
 
 export const AppContext = createContext<AppContextProps>(defaultContextValue);
@@ -60,4 +62,3 @@ export const AppProvider = ({ children }: AppProviderProps) => {
         </AppContext.Provider>
     );
 };
-// state.filter((food) => food.name.includes(action.payload));   
