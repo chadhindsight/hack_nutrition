@@ -1,25 +1,19 @@
-import { useState } from 'react'
-import foods from '../data/foods.json'
-
-import { foodDataType } from './types';
-import './App.css'
+import { useAppContext } from './context/globalState';
 import FoodBox from './components/FoodBox';
+import './App.css'
+import Search from './components/Search';
 
 function App() {
-  // Put food data in state
-  const [foodList, setFoodList] = useState<foodDataType>(foods);
-
-  // delete an entry
-  const deleteFood = (id: number) => {
-    setFoodList(prevList => prevList.filter(food => food.id !== id))
-  }
+  // get foodList from global state
+  const { foodList } = useAppContext();
 
 
   return (
     <>
+      <Search />
       {
         foodList.map(foodItem => (
-          <FoodBox {...foodItem} deleteFood={() => deleteFood(foodItem.id)} />
+          <FoodBox key={foodItem.id} {...foodItem} />
         ))
       }
     </>

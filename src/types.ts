@@ -7,4 +7,4 @@ export interface foodData {
     deleteFood?: () => void;
 }
 
-export type foodDataType = foodData[];
+export type foodDataArray = foodData[];
