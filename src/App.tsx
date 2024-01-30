@@ -2,6 +2,7 @@ import { useAppContext } from './context/globalState';
 import FoodBox from './components/FoodBox';
 import './App.css'
 import Search from './components/Search';
+import AddFoodForm from './components/AddFoodForm';
 
 function App() {
   const { foodList } = useAppContext();
@@ -9,6 +10,7 @@ function App() {
 
   return (
     <>
+      <AddFoodForm />
       <Search />
       {
         foodList.map(foodItem => (
