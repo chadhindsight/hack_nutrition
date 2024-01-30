@@ -26,6 +26,7 @@ const AddFoodForm = () => {
         dispatch({ type: 'ADD_FOOD', payload: newData });
         setNewData({} as foodData)
     }
+
     return (
         <form onSubmit={(e) => submitFood(e)}>
             <Divider style={{ color: "aliceblue" }}>Add Food Entry</Divider>
