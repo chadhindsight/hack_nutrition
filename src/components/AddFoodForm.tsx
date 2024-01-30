@@ -24,17 +24,20 @@ const AddFoodForm = () => {
         e.preventDefault();
 
         dispatch({ type: 'ADD_FOOD', payload: newData });
+        setNewData({} as foodData)
     }
     return (
         <form onSubmit={(e) => submitFood(e)}>
-            <Divider>Add Food Entry</Divider>
+            <Divider style={{ color: "aliceblue" }}>Add Food Entry</Divider>
 
             {
                 inputFields.map((field, idx) => (
                     <div key={idx}>
                         <label>{field}</label>
                         <Input type={field === 'calories' || field === 'servings' ? 'number' : 'text'}
-                            value={field || ''}
+                            // Clears input fields upon submission
+                            value={(newData[field as keyof foodData] as string) || ''}
+                            placeholder={field || ''}
                             onChange={(e) => handleChange(e, field as keyof foodData)} />
                     </div>
                 ))
