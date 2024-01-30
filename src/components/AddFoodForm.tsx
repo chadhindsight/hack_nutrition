@@ -24,7 +24,6 @@ const AddFoodForm = () => {
         e.preventDefault();
 
         dispatch({ type: 'ADD_FOOD', payload: newData });
-        console.log('deez', newData)
     }
     return (
         <form onSubmit={(e) => submitFood(e)}>

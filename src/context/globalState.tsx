@@ -25,6 +25,8 @@ const appReducer = (state: foodDataArray, action: FoodAction): foodDataArray => 
             } else {
                 return foods.filter((food) => food.name.toLowerCase().includes(action.payload.toLowerCase()));
             }
+        case 'ADD_FOOD':
+            return [...state, action.payload];
         default:
             return state
     }

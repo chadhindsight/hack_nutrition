@@ -1,6 +1,6 @@
 import { Input } from 'antd';
 import { useAppContext } from '../context/globalState';
-
+// use foodData to 'type' the data store in local state and send that data as the payload to context
 function Search() {
     const { dispatch } = useAppContext();
 
