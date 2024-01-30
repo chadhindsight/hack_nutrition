@@ -34,6 +34,7 @@ const AddFoodForm = () => {
                     <div key={idx}>
                         <label>{field}</label>
                         <Input type={field === 'calories' || field === 'servings' ? 'number' : 'text'}
+                            value={field || ''}
                             onChange={(e) => handleChange(e, field as keyof foodData)} />
                     </div>
                 ))
