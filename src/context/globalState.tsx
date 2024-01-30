@@ -1,16 +1,17 @@
-import React, { createContext, useContext, ReactNode, useReducer, Dispatch } from 'react';
-import { foodDataArray } from '../types';
+import { createContext, useContext, ReactNode, useReducer, Dispatch } from 'react';
+import { foodData, foodDataArray } from '../types';
 import foods from '../../data/foods.json';
+
+type FoodAction =
+    | { type: 'SET_FOOD_LIST'; payload: foodDataArray }
+    | { type: 'ADD_FOOD'; payload: foodData }
+    | { type: 'DELETE_FOOD'; payload: number }
+    | { type: 'SEARCH_FOOD'; payload: string };
 
 interface AppContextProps {
     foodList: foodDataArray;
     dispatch: Dispatch<FoodAction>;
 }
-
-type FoodAction =
-    | { type: 'SET_FOOD_LIST'; payload: foodDataArray }
-    | { type: 'DELETE_FOOD'; payload: number }
-    | { type: 'SEARCH_FOOD'; payload: string };
 
 const appReducer = (state: foodDataArray, action: FoodAction): foodDataArray => {
     switch (action.type) {
