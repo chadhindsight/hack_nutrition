@@ -4,7 +4,7 @@ import './App.css'
 import Search from './components/Search';
 import AddFoodForm from './components/AddFoodForm';
 import { useState } from 'react';
-import { Button, Divider } from 'antd';
+import { Button, Divider, Row } from 'antd';
 
 function App() {
   const [isFormShown, setIsFormShown] = useState(false);
@@ -21,11 +21,13 @@ function App() {
       }
       <Divider />
       <Search />
-      {
-        foodList.map(foodItem => (
-          <FoodBox key={foodItem.id} {...foodItem} />
-        ))
-      }
+      <Row style={{ width: '100%', justifyContent: 'center' }}>
+        {
+          foodList.map(foodItem => (
+            <FoodBox key={foodItem.id} {...foodItem} />
+          ))
+        }
+      </Row>
     </>
   )
 }
