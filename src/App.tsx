@@ -19,7 +19,7 @@ function App() {
         isFormShown ?
           <AddFoodForm /> : null
       }
-      <Divider />
+      <Divider style={{ color: 'aliceblue' }}>Food List</Divider>
       <Search />
       <Row style={{ width: '100%', justifyContent: 'center' }}>
         {
