@@ -12,8 +12,7 @@ function Search() {
 
     return (
         <>
-            <label>Search Food</label>
-            <Input placeholder="Searh for food" type='text' onChange={(e) => handleSearch(e)} />
+            <Input placeholder="Enter your fave food here" type='text' onChange={(e) => handleSearch(e)} />
         </>
     );
 }
