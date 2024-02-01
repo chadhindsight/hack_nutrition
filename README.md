@@ -9,6 +9,9 @@ This project is based on a class activity from th Ironhack Miami's Web Developme
 ## How it works
 
 A nutrition SPA that allows users to search a list of foods. Here they can see information for each food item including name, calories, and serving size.
+![Screenshot 2024-02-01 at 12 05 59 PM](https://github.com/chadhindsight/hack_nutrition/assets/16522246/c496b978-c731-47d2-a2e2-115b8708fab6)
+
+
 
 ## React + TypeScript + Vite
 
