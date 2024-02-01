@@ -6,6 +6,10 @@ Learn about your favorite foods!
 
 This project is based on a class activity from th Ironhack Miami's Web Development Bootcamp. This project is aweb application built with React Typescript and Vite.
 
+## How it works
+
+A nutrition SPA that allows users to search a list of foods. Here they can see information for each food item including name, calories, and serving size.
+
 ## React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
