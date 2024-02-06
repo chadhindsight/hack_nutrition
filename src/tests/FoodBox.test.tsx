@@ -9,13 +9,17 @@ describe('FoodBox', () => {
             name: 'Food name',
             calories: 100,
             image: 'test.jpg',
-            servings: 3,
+            servings: 2,
             id: 1
         };
         render(<FoodBox {...foodItem} />);
 
         expect(screen.getByText('Food name') as HTMLElement).toBeInTheDocument();
         expect(screen.getByText('Calories: 100')).toBeInTheDocument();
-        expect(screen.getByText('Servings: 3')).toBeInTheDocument();
+        expect(screen.getByText('Servings: 2')).toBeInTheDocument();
+        const totalCaloriesElement = screen.getByText(/Total Calories/i)?.closest('p')?.querySelector('b');
+        // Assert the text content within the <b> element
+        expect(totalCaloriesElement).toHaveTextContent('100'); // Adjust the expected value as needed
+        expect(totalCaloriesElement?.nextSibling?.textContent).toContain('kcal');
     });
 });
