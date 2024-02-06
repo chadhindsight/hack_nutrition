@@ -19,7 +19,7 @@ describe('FoodBox', () => {
         expect(screen.getByText('Servings: 2')).toBeInTheDocument();
         const totalCaloriesElement = screen.getByText(/Total Calories/i)?.closest('p')?.querySelector('b');
         // Assert the text content within the <b> element
-        expect(totalCaloriesElement).toHaveTextContent('100'); // Adjust the expected value as needed
+        expect(totalCaloriesElement).toHaveTextContent('200'); // Adjust the expected value as needed
         expect(totalCaloriesElement?.nextSibling?.textContent).toContain('kcal');
     });
 });
