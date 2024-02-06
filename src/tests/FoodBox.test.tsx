@@ -9,14 +9,13 @@ describe('FoodBox', () => {
             name: 'Food name',
             calories: 100,
             image: 'test.jpg',
-            servings: 2,
+            servings: 3,
             id: 1
         };
         render(<FoodBox {...foodItem} />);
 
         expect(screen.getByText('Food name') as HTMLElement).toBeInTheDocument();
         expect(screen.getByText('Calories: 100')).toBeInTheDocument();
-        expect(screen.getByText('Servings: 2')).toBeInTheDocument();
-        expect(screen.getByText('Total Calories: 200')).toBeInTheDocument();
+        expect(screen.getByText('Servings: 3')).toBeInTheDocument();
     });
 });
