@@ -21,7 +21,7 @@ function FoodBox(foodItem: foodData) {
                 <p>Calories: {calories}</p>
                 <p>Servings: {servings}</p>
                 <p>
-                    <b>Total Calories: {calories * servings} </b> kcal
+                    <b>Total Number of Calories: {calories * servings} </b> kcal
                 </p>
                 <Button type="primary" onClick={() => handleDelete(id)}> Delete </Button>
             </Card>
