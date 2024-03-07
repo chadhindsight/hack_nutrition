@@ -19,6 +19,7 @@ const AddFoodForm = () => {
             [fieldName]: value
         }));
     };
+
     // onSubmit- call the dispatch action
     const submitFood = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
