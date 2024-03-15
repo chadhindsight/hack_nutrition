@@ -9,7 +9,7 @@ const AddFoodForm = () => {
     // use foodData the to 'type' the data store in local state and send that data as the payload to context
     const [newData, setNewData] = useState<foodData>({} as foodData)
     const inputFields = ['name', 'image', 'calories', 'servings'];
-    // onChange
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>, fieldName: keyof foodData) => {
         const value = e.target.value;
         console.log('new ting', newData)
