@@ -8,7 +8,7 @@ const AddFoodForm = () => {
 
     // use foodData the to 'type' the data store in local state and send that data as the payload to context
     const [newData, setNewData] = useState<foodData>({} as foodData)
-    const inputFields = ['name', 'image', 'calories', 'servings'];
+    const inputFieldsArr = ['name', 'image', 'calories', 'servings'];
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>, fieldName: keyof foodData) => {
         const value = e.target.value;
@@ -33,7 +33,7 @@ const AddFoodForm = () => {
             <Divider style={{ color: "aliceblue" }}>Add Food Entry</Divider>
 
             {
-                inputFields.map((field, idx) => (
+                inputFieldsArr.map((field, idx) => (
                     <div key={idx}>
                         <label>{field}</label>
                         <Input type={field === 'calories' || field === 'servings' ? 'number' : 'text'}
