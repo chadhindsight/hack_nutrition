@@ -11,6 +11,7 @@ function FoodBox(foodItem: foodData) {
     const handleDelete = (id: number) => {
         dispatch({ type: 'DELETE_FOOD', payload: id });
     };
+    // comment
     return (
         <Col>
             <Card
